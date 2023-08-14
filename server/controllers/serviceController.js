@@ -1,74 +1,57 @@
-const Service = require('../models/serviceModel');
-const path = require('path')
-const fs = require('fs')
+const Service = require("../models/serviceModel");
+const path = require("path");
+const fs = require("fs");
 
-
-
-exports.getService = ( async (req,res)=>{
-try {
-        const services = await Service.find();
-        res.render('index', {services: services})
-        
-} catch (error) {
-  console.log(error);
-    // res.status(500).json(`fail to get services  `)
-    
-}
-})
-
-exports.getServiceById = ( async (req,res)=>{
-try {
-        const serviceId = req.params.serviceId
-    
-        const service = await Service.findById(serviceId);
-        res.render('detail', {service: service})
-       ;
-} catch (error) {
-    res.status(500).json(`fail to get service  `)
-    
-}
-});
-exports.getupdatepage = ( async (req,res)=>{
+exports.getService = async (req, res) => {
   try {
-    const serviceId = req.params.serviceId
-
-    const service = await Service.findById(serviceId)
-    res.render('update', {service:service})
-   
+    const services = await Service.find();
+    res.render("index", { services: services });
   } catch (error) {
-    console.log(error)
+    console.log(error);
+    // res.status(500).json(`fail to get services  `)
   }
-})
+};
 
-exports.deleteById = ( async (req, res)=>{
-    try{
-        const serviceId = req.params.serviceId;
+exports.getServiceById = async (req, res) => {
+  try {
+    const service = await Service.findById(req.params.id);
+    res.render("detail", { service: service });
+  } catch (error) {
+    res.status(500).json(`fail to get service  `);
+  }
+};
+exports.getupdatepage = async (req, res) => {
+  try {
+    const service = await Service.findById(req.params.id);
+    res.render("update", { service: service });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-        // Find the service by ID in the database
-        const service = await Service.findById(serviceId);
-    
-        const imageFileName = service.image;
-        const imagePath = path.join(
-          __dirname,
-          "../../public/uploads/serviceimg/" + imageFileName
-        );
-    
-        fs.unlink(imagePath, (err) => {
-          if (err) {
-            console.error(err);
-          } else {
-            console.log("Image file deleted");
-          }
-        });
-    
-        // Find the service by ID and delete it
-        await Service.findByIdAndDelete(serviceId);
-        res.redirect('/api/service')
+exports.deleteById = async (req, res) => {
+  try {
+    // Find the service by ID in the database
+    const service = await Service.findById(req.params.id);
 
-       
-    }
-    catch(error){
-        res.status(500).json(`An error occured while deleting service ${error}`)
+    const imageFileName = service.image;
+    const imagePath = path.join(
+      __dirname,
+      "../../public/uploads/serviceimg/" + imageFileName
+    );
 
-    }
-})
+    fs.unlink(imagePath, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("Image file deleted");
+      }
+    });
+
+    // Find the service by ID and delete it
+    await Service.findByIdAndDelete(req.params.id);
+    res.redirect("/api/service");
+  } catch (error) {
+    res.status(500).json(`An error occured while deleting service ${error}`);
+  }
+};
