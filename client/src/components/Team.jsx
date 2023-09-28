@@ -31,45 +31,40 @@ const Team = () => {
             <li key={team.name} className="">
               <div className="flex items-center gap-x-6">
                 <Tilt className="xs:w-[250px] w-full">
-                  <motion.div
-                    variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-                    className="w-full green-pink-gradient p-[1px] rounded-[20px]"
+                  <div
+                    options={{
+                      max: 45,
+                      scale: 1,
+                      speed: 450,
+                    }}
+                    className="bg-white rounded-[20px] py-5 px-12 sm:min-h-[450px] flex justify-evenly items-center flex-col"
                   >
-                    <div
-                      options={{
-                        max: 45,
-                        scale: 1,
-                        speed: 450,
-                      }}
-                      className="bg-white rounded-[20px] py-5 px-12 sm:min-h-[450px] flex justify-evenly items-center flex-col"
-                    >
-                      <img
-                        className="h-[100%] w-[100%] rounded-full"
-                        src={team.icon}
-                        alt=""
-                      />
-                      <div>
-                        <h3 className="text-2xl font-semibold leading-7 tracking-tight text-gray-900">
-                          {team.name}
-                        </h3>
-                        <p className="text-sm font-semibold leading-6 text-indigo-600">
-                          {team.role}
-                        </p>
-                      </div>
-                      <div className="flex gap-3">
-                        {socials.map((social, index) => (
-                          <div
-                            key={social.name}
-                            className="border-none rounded-full bg-[#f3f5fa]"
-                          >
-                            <a href={social.url}>
-                              <img src={social.icon} alt="" className="p-1" />
-                            </a>
-                          </div>
-                        ))}
-                      </div>
+                    <img
+                      className="h-[100%] w-[100%] rounded-full"
+                      src={team.icon}
+                      alt=""
+                    />
+                    <div>
+                      <h3 className="text-2xl font-semibold leading-7 tracking-tight text-gray-900">
+                        {team.name}
+                      </h3>
+                      <p className="text-sm font-semibold leading-6 text-indigo-600">
+                        {team.role}
+                      </p>
                     </div>
-                  </motion.div>
+                    <div className="flex gap-3">
+                      {socials.map((social, index) => (
+                        <div
+                          key={social.name}
+                          className="border-none rounded-full bg-[#f3f5fa]"
+                        >
+                          <a href={social.url}>
+                            <img src={social.icon} alt="" className="p-1" />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </Tilt>
               </div>
             </li>
