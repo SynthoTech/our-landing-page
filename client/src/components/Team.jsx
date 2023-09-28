@@ -10,7 +10,7 @@ import { Fati } from "../assets";
 const Team = () => {
   return (
     <section className="services section-bg">
-      <motion.div variants={textVariant()}>
+      <div>
         <div className="section-title">
           <h2>Team</h2>
           <p className="pd-[24px] text-[16px] text-[#444444]">
@@ -20,7 +20,7 @@ const Team = () => {
             fugiat sit in iste officiis commodi quidem hic quas.
           </p>
         </div>
-      </motion.div>
+      </div>
 
       <div className="  justify-center">
         <ul
