@@ -13,7 +13,7 @@ const Team = () => {
       <div>
         <div className="section-title">
           <h2>Team</h2>
-          <p className="pd-[24px] text-[16px] text-[#444444] text-justify">
+          <p className="pd-[24px] text-[16px] text-[#444444]">
             Meet the talented individuals who make our company thrive. Our
             diverse team brings a wealth of experience, creativity, and passion
             to every project we undertake. Together, we are committed to
