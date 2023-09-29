@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex pt-36 md:pt-32 lg:pt-40 xl:pt-96   px-4 md:px-6  xl:px-20 flex-col justify-start items-start md:justify-center md:items-center relative z-10">
           <div className="flex  flex-col items-start justify-start xl:justify-center xl:space-x-8 xl:flex-row">
             <div className="flex justify-start items-center space-x-4">
-              <div className="cursor-pointer w-12">
+              <div className="cursor-pointer w-14">
                 <img src={logo} alt="logo" />
               </div>
               <p className="w-60 text-xl xl:text-2xl font-semibold leading-normal text-white">
