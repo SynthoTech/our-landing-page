@@ -1,6 +1,6 @@
 import React from "react";
 import { SectionWrapper } from "../hoc";
-import { team, socials } from "../constants";
+import { team } from "../constants";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
@@ -41,7 +41,7 @@ const Team = () => {
                   >
                     <img
                       className="h-[100%] w-[100%] rounded-full"
-                      src={team.icon}
+                      src={team.image}
                       alt=""
                     />
                     <div>
@@ -53,16 +53,33 @@ const Team = () => {
                       </p>
                     </div>
                     <div className="flex gap-3">
-                      {socials.map((social, index) => (
-                        <div
-                          key={social.name}
-                          className="border-none rounded-full bg-[#f3f5fa]"
-                        >
-                          <a href={social.url}>
-                            <img src={social.icon} alt="" className="p-1" />
-                          </a>
-                        </div>
-                      ))}
+                      <div className="border-none rounded-full bg-[#f3f5fa]">
+                        <a href={team.twitterUrl} target="_blank">
+                          <img
+                            src={team.twitterIcon}
+                            alt={team.twitter}
+                            className="p-3"
+                          />
+                        </a>
+                      </div>
+                      <div className="border-none rounded-full bg-[#f3f5fa]">
+                        <a href={team.emailUrl} target="_blank">
+                          <img
+                            src={team.emailIcon}
+                            alt={team.email}
+                            className="p-3"
+                          />
+                        </a>
+                      </div>
+                      <div className="border-none rounded-full bg-[#f3f5fa]">
+                        <a href={team.linkedinUrl} target="_blank">
+                          <img
+                            src={team.linkedinIcon}
+                            alt={team.linkedin}
+                            className="p-3"
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </Tilt>
