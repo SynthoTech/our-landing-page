@@ -13,11 +13,11 @@ const Team = () => {
       <div>
         <div className="section-title">
           <h2>Team</h2>
-          <p className="pd-[24px] text-[16px] text-[#444444]">
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-            quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-            fugiat sit in iste officiis commodi quidem hic quas.
+          <p className="pd-[24px] text-[16px] text-[#444444] text-justify">
+            Meet the talented individuals who make our company thrive. Our
+            diverse team brings a wealth of experience, creativity, and passion
+            to every project we undertake. Together, we are committed to
+            delivering exceptional results and exceeding your expectations.
           </p>
         </div>
       </div>
