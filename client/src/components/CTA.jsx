@@ -9,7 +9,7 @@ const CTA = () => {
           <h3 className="text-white font-black text-[28px]">
             Experience Seamless Efficiency and Growth
           </h3>
-          <p className="text-white font-light ml-10">
+          <p className="text-white font-light mr-24">
             Ready to take your business to the next level? Our cutting-edge
             products & services is designed to supercharge your operations,
             streamline processes, and boost productivity. Join thousands of
