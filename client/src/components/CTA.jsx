@@ -11,9 +11,10 @@ const CTA = () => {
           </h3>
           <p className="text-white font-light">
             Ready to take your business to the next level? Our cutting-edge
-            products & services is designed to supercharge <br /> your
-            operations, streamline processes, and boost productivity. Join
-            thousands of satisfied users who are already reaping the benefits.
+            products & services is designed <br /> to supercharge your
+            operations, streamline processes, and boost productivity. <br />
+            Join thousands of satisfied users who are already reaping the
+            benefits.
           </p>
         </div>
         <div className="text-center mt-5">
